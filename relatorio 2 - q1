@@ -1,0 +1,10 @@
+io.write("digite um numero: ")
+local numero = tonumber(io.read())
+
+if numero then
+    for i = 1, 10 do
+        print(numero .. " x " .. i .. " = " .. (numero * i))
+    end
+else
+    print("digite um numero")
+end
