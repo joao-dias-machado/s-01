@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class Pessoa {
+protected:
+    string nome;
+    int idade;
+
+public:
+    Pessoa(string n, int i) : nome(n), idade(i) {}
+
+    void imprimeNome() {
+        cout << "O nome é: " << nome << endl;
+    }
+};
+
+class Professor : public Pessoa {
+public:
+    Professor(string n, int i) : Pessoa(n, i) {}
+
+    void imprimeIdade() {
+        cout << "A idade do professor é: " << idade << " anos." << endl;
+    }
+};
+
+class Aluno : public Pessoa {
+private:
+    string matricula;
+
+public:
+    Aluno(string n, int i, string m) : Pessoa(n, i), matricula(m) {}
+
+    void imprimeIdade() {
+        cout << "A idade do aluno é: " << idade << " anos." << endl;
+    }
+
+    void imprimeMatricula() {
+        cout << "A matrícula do aluno é: " << matricula << endl;
+    }
+};
+
+int main() {
+    Aluno a("João", 20, "A12345");
+    Professor p("Maria", 45);
+    Pessoa pessoa("Carlos", 30);
+
+    pessoa.imprimeNome();
+    p.imprimeNome();
+    p.imprimeIdade();
+    a.imprimeNome();
+    a.imprimeIdade();
+    a.imprimeMatricula();
+
+    return 0;
+}
