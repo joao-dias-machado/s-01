@@ -1,0 +1,13 @@
+q1 :
+movie(M, 2006).
+
+q2:
+movie(M, Y),
+Y =< 2001.
+
+q3:
+(movie(M, 2000); movie(M, 2006)).
+
+q4:
+movie(the_godfather_part_iii, Y),
+Y \= 1990.
