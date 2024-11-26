@@ -1,0 +1,11 @@
+(defun process-list (lst)
+  (mapcar (lambda (x)
+            (if (>= x 4)
+                (* x 2)
+                (/ x 2)))
+          lst))
+
+(defun join-processed-lists (lst1 lst2)
+  (append (process-list lst1) (process-list lst2)))
+
+(join-processed-lists '(1 2 3) '(4 5 6))
